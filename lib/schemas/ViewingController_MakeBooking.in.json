@@ -1,0 +1,107 @@
+{
+    "type": "object",
+    "properties": {
+        "shortName": {
+            "required": true,
+            "type": "string"
+        },
+        "forename": {
+            "required": true,
+            "type": "string"
+        },
+        "surname": {
+            "required": true,
+            "type": "string"
+        },
+        "mobilePhone": {
+            "required": true,
+            "type": "string"
+        },
+        "emailAddress": {
+            "required": true,
+            "type": "string"
+        },
+        "propertyIDsToView": {
+            "required": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "wantRoomInSharedProperty": {
+            "required": false,
+            "type": "boolean"
+        },
+        "alertMinRent": {
+            "required": false,
+            "type": "number",
+            "format": "double"
+        },
+        "alertMaxRent": {
+            "required": false,
+            "type": "number",
+            "format": "double"
+        },
+        "alertNumberOfBeds": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "alertAreaID": {
+            "required": false,
+            "type": "string"
+        },
+        "alertTenantType": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Employed",
+                "SelfEmployed",
+                "Unemployed",
+                "Student",
+                "OwnMeans",
+                "Retired",
+                "Company",
+                "Council"
+            ]
+        },
+        "subscribeToEmailAlerts": {
+            "required": false,
+            "type": "boolean"
+        },
+        "subscribeToSMSAlerts": {
+            "required": false,
+            "type": "boolean"
+        },
+        "requestBody": {
+            "description": "Represents a viewing booking slot",
+            "properties": {
+                "End": {
+                    "description": "The end time of the booking",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "StaffID": {
+                    "description": "The unique ID of the staff member this booking is with",
+                    "type": "string"
+                },
+                "StaffName": {
+                    "description": "The name of the staff member this booking is with",
+                    "type": "string"
+                },
+                "Start": {
+                    "description": "The start time of the booking",
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Start",
+                "End",
+                "StaffName",
+                "StaffID"
+            ],
+            "type": "object"
+        }
+    }
+}

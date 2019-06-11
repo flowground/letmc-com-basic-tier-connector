@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "shortName": {
+            "required": true,
+            "type": "string"
+        },
+        "preferredDate": {
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+        },
+        "propertyIDsToView": {
+            "required": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}
